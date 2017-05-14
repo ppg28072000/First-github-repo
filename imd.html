@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>im d</title>
+<style type=""text/css">
+body{
+	background-image:url(coverfull.jpg);
+	background-repeat:repeat-y;
+	background-size:50% 100%;
+}
+#Imagine img{
+opacity:0.7;
+max-width:620px;
+}
+img {
+position:relative;
+
+opacity:0.8;
+}
+#Imagine {
+position:absolute;
+border-radius:30px;
+left:510px;
+top:100px;
+width:100px;
+background-blend-mode: color-dodge;
+
+animation-name: picture;
+    animation-duration: 10s;
+     animation-direction: alternate;
+    animation-iteration-count:infinite;
+}
+@keyframes picture {
+    
+    20%  {border-radius:30px;background-image:url(dualbeliever.jpg);opacity:0.9;width:620px;height:350px;}
+	
+    60%  {border-radius:30px;background-image:url(believer.jpg);opacity:0.6;width:620px;height:350px;background-repeat:no-repeat;}
+    
+	100%	{border-radius:30px;background-image:url(believercover.jpg);opacity:1;width:620px;height:350px;}
+}
+</style>
+
+</head>
+<body>
+<img src="imcover.jpg" top="100px"/>
+<audio controls position="relative">
+<source src="Imagine Dragons - Believer (Audio).mp3" type="audio/mp3">
+</audio>
+<div id="Imagine"><img src="believer.jpg" /></div>
+
+
+
+</body>
+
+</html>
+
+

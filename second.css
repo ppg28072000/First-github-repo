@@ -18,8 +18,8 @@ font-family:"Lucida Grande",Tahoma;
 #Header img {
 	position:absolute;
 	top:0px;
-	left:50px;
-	height:140px;
+	left:140px;
+	height:90px;
 	width:200px;
 }
 #Header #loginmail{

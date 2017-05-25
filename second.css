@@ -87,6 +87,11 @@ height:800px;
 #Create #spcl input[type=text]{
 	width:422px;
 }
+#Create #last {
+	position:relative;
+	top:10px;
+	font-size:13px;
+}
 #imageholder {
 	position:relative;
 	left:100px;

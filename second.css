@@ -3,6 +3,7 @@ background: linear-gradient(to bottom, White 20%,LightSteelBlue 100%);
 /*background-color:AliceBlue;*/
 position:top;
 font-family:"Lucida Grande",Tahoma;
+height:800px;
 }
 
 #Header {
@@ -18,7 +19,7 @@ font-family:"Lucida Grande",Tahoma;
 #Header img {
 	position:absolute;
 	top:0px;
-	left:140px;
+	left:240px;
 	height:90px;
 	width:200px;
 }
@@ -101,7 +102,7 @@ font-family:"Lucida Grande",Tahoma;
 }
 #imageholder h1{
 	position:absolute;
-	height:30px;
+	height:300px;
 	left:140px;
 }
 #imageholder img {

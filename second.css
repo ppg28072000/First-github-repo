@@ -1,9 +1,16 @@
+html {
+	width:100%;
+	
+}
 body {
 background: linear-gradient(to bottom, White 20%,LightSteelBlue 100%);	
 /*background-color:AliceBlue;*/
-position:top;
+background-repeat:repeat-x;
 font-family:"Lucida Grande",Tahoma;
-height:800px;
+min-width:1366px;
+width:100%;
+min-height:620px;
+height:100%;
 }
 
 #Header {
@@ -12,14 +19,15 @@ height:800px;
 	position:relative;
 	margin-left:0px;
 	height:90px;
-	width:1366px;
+	min-width:1366px;
+	width:100%;
 	left:-10px;
 	top:-10px;
 }
 #Header img {
 	position:absolute;
 	top:0px;
-	left:240px;
+	left:230px;
 	height:90px;
 	width:200px;
 }
@@ -38,6 +46,10 @@ height:800px;
 	top:20px;
 	
 }
+#Header input[type=text]{
+	margin-top:5px;
+	max-width:150px;
+}
 #Header #loginpassword input[type=submit]{
 	background-color:rgb(59,89,152);
 	color:white;
@@ -53,10 +65,10 @@ height:800px;
 #Create{
 	font-size:10px;
 	position:relative;
-	right:-700px;
+	left:800px;
 	top:20px;
 	width:440px;
-	margin-right:0px;
+	max-width:440px;
 }
 #Create #Top{
 	font-size:40px;
@@ -64,6 +76,8 @@ height:800px;
 }
 #Create #subhead{
 	font-size:20px;
+	margin-bottom:20px;
+	margin-top:10px;
 }
 #Create input[type=submit]{
 	width:200px;
@@ -75,17 +89,18 @@ height:800px;
 	color:white;
 }
 #Create input[type=text]{
-	width:200px;
+	width:45%;
 	border-radius:5px;
 	height:30px;
 	font-size:18px;
 	padding-left:10px;
+	margin-top:10px;
 	margin-bottom:10px;
 	border-style:ridge;
 	border-color:AliceBlue;
 }
 #Create #spcl input[type=text]{
-	width:422px;
+	width:96%;
 }
 #Create #last {
 	position:relative;
@@ -95,7 +110,7 @@ height:800px;
 #imageholder {
 	position:relative;
 	left:100px;
-	top:-270px;
+	top:-280px;
 	width:550px;
 	height:300px;
 	display:block;
@@ -103,7 +118,9 @@ height:800px;
 #imageholder h1{
 	position:absolute;
 	height:300px;
+	top:0px;
 	left:140px;
+	width:50%;
 }
 #imageholder img {
 	position:absolute;
@@ -113,28 +130,30 @@ height:800px;
 	border-width:10px;
 	border-color:black;
 	opacity:0.7;
+	width:100%;
 }
-#footer {
-	
+footer {
 	background-color:white;
+	margin-bottom:0px;
 	position:relative;
-	bottom:-30px;
-	margin-left:-10px;
-	margin-bottom:-20px;
-	width:1366px;
-	height:100px;
+	top:100px;
+	left:-10px;
+	width:100%;
+	min-width:1366px;
+	height:110px;
+
 }
-#footer p{
+footer p{
 	position:absolute;
-	left:270px;
-	top:-20px;
+	top:-10px;
+	left:200px;
 }
-#footer a{
+footer p a{
 	margin-left:10px;
 	font-size:12px;
 }
-hr{
+footer hr{
 	position:absolute;
-	top:10px;
-	left:270px;
+	top:20px;
+	left:200px;
 }

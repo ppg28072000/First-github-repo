@@ -9,20 +9,31 @@ background-repeat:repeat-x;
 font-family:"Lucida Grande",Tahoma;
 min-width:1366px;
 width:100%;
-min-height:620px;
+min-height:650px;
 height:100%;
 }
-
+#giantheader {
+	background-color:rgb(59,89,152);
+	height:100px;
+	width:100%;
+	position:relative;
+	left:-10px;
+	
+	top:-10px;
+}
 #Header {
 	background-color:rgb(59,89,152);
 	color:white;
-	position:relative;
-	margin-left:0px;
+	position:absolute;
+	left:50%;
+	margin-left:-700px;
+	/*margin-left:0px;
+	left:-10px;
+	top:-10px;*/
 	height:90px;
 	min-width:1366px;
 	width:100%;
-	left:-10px;
-	top:-10px;
+	
 }
 #Header img {
 	position:absolute;
@@ -44,28 +55,42 @@ height:100%;
 	position:absolute;
 	left:1000px;
 	top:20px;
-	
 }
 #Header input[type=text]{
 	margin-top:5px;
 	max-width:150px;
 }
 #Header #loginpassword input[type=submit]{
-	background-color:rgb(59,89,152);
+	background-color:rgb(59,89,200);
 	color:white;
 	font-size:13px;
 	border-color:black;
 	border-width:1px;
+	border-style:ridge;
 	height:20px;
 	vertical-align:middle;
 }
 #Header #loginpassword a{
 	color:CornflowerBlue;
+	max-height:5px;
+	position:absolute;
+	top:40px;
+	margin-top:5px;
+}
+#giantCreate{
+	position:relative;
+	left:0px;
+	top:0px;
+	width:100%;
+	min-width:1366px;
+	min-height:620px;
+	height:100%;
 }
 #Create{
 	font-size:10px;
-	position:relative;
-	left:800px;
+	position:absolute;
+	left:50%;
+	margin-left:50px;
 	top:20px;
 	width:440px;
 	max-width:440px;
@@ -106,7 +131,24 @@ height:100%;
 	position:relative;
 	top:10px;
 	font-size:13px;
+	width:440px;
+	
 }
+#Create img {
+	position:absolute;
+	top:50px;
+	left:-600px;
+	
+}
+#Create h1{
+	position:absolute;
+	top:0px;
+	left:-510px;
+	opacity:0.7;
+	width:30%;
+	font-size:30px;
+}
+/*
 #imageholder {
 	position:relative;
 	left:100px;
@@ -132,6 +174,7 @@ height:100%;
 	opacity:0.7;
 	width:100%;
 }
+*/
 footer {
 	background-color:white;
 	margin-bottom:0px;
@@ -145,15 +188,19 @@ footer {
 }
 footer p{
 	position:absolute;
-	top:-10px;
-	left:200px;
+	top:0px;
+	left:50%;
+	margin-left:-400px;
+	margin-top:0px;
 }
 footer p a{
 	margin-left:10px;
 	font-size:12px;
+	
 }
 footer hr{
 	position:absolute;
-	top:20px;
-	left:200px;
+	top:12px;
+	left:50%;
+	margin-left:-400px;
 }

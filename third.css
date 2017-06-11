@@ -65,9 +65,16 @@ body {
 background-color:Lime;
 }
 #time {
-	width:50px;
+	width:200px;
 	height:40px;
 	font-size:40px;
 	color:white;
 	background-color:red;
+	position:absolute;
+	left:30px;
+	top:300px;
+	border-width:10px;
+	border-radius:5px;
+	border-style:groove;
+	
 }

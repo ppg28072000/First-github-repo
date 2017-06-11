@@ -6,20 +6,15 @@
 
 function start(){
 document.getElementById("play").style.display='none';
+setInterval(timer,1000);
 };
+
 </script>
 <link href="third.css" type="text/css" rel="stylesheet">
 
 </head>
 <body>
-<script>
-var seconds=0;
-function timer(){
-seconds++;
-return seconds;
-};
-document.getElementById("time").innerHTML =timer();
-</script>
+
 <div id="head">
 <h1>Make the match</h1>
 <h3>As much as possible!</h3>
@@ -28,32 +23,51 @@ document.getElementById("time").innerHTML =timer();
 <div id="play" ><a href="javascript:start()">
 PLAY!</a>
 </div>
-<table>
+<table >
 <tr id="r1">
-	<td id="r1c1"></td>
-	<td id="r1c2"></td>
-	<td id="r1c3"></td>
-	<td id="r1c4"></td>
+	<td id="d1"></td>
+	<td id="d2"></td>
+	<td id="d3"></td>
+	<td id="d4"></td>
 </tr>
 <tr id="r2">
-	<td id="r2c1"></td>
-	<td id="r2c2"></td>
-	<td id="r2c3"></td>
-	<td id="r2c4"></td>
+	<td id="d5"></td>
+	<td id="d6"></td>
+	<td id="d7"></td>
+	<td id="d8"></td>
 </tr>
 <tr id="r3">
-	<td id="r3c1"></td>
-	<td id="r3c2"></td>
-	<td id="r3c3"></td>
-	<td id="r3c4"></td>
+	<td id="d9"></td>
+	<td id="d10"></td>
+	<td id="d11"></td>
+	<td id="d12"></td>
 </tr>
 <tr id="r4">
-	<td id="r4c1"></td>
-	<td id="r4c2"></td>
-	<td id="r4c3"></td>
-	<td id="r4c4"></td>
+	<td id="d13"></td>
+	<td id="d14"></td>
+	<td id="d15"></td>
+	<td id="d16"></td>
 </tr>
 </table>
-<div id="time">s</div>
+<div id="time">time:000</div>
+<script>
+var seconds=0;
+function timer(){
+seconds++;
+if(seconds<=9)
+document.getElementById("time").innerHTML ='time:00'+seconds;
+else if(seconds<=99)
+document.getElementById("time").innerHTML ='time:0'+seconds;
+else
+document.getElementById("time").innerHTML ='time:'+seconds;
+};
+var alpha = ['M','A','K','E','P','A','I','R'];
+var alpha2 = alpha.concat(alpha);
+var i;
+for(i=0;i<12;i++)
+{	if(i<4)
+	document.getElementsByTagName("table").rows[i].cells[i].innerHTML= alpha2[i];
+}
+</script>
 </body>
 </html>

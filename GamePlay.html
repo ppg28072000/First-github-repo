@@ -6,9 +6,12 @@
 
 function start(){
 document.getElementById("play").style.display='none';
+document.getElementById("play").id ="started"
 setInterval(timer,1000);
+begin();
 };
-
+if(document.getElementById("play") !==null)
+document.getElementByTagName("td").style.pointerEvents = 'none';
 </script>
 <link href="third.css" type="text/css" rel="stylesheet">
 
@@ -23,30 +26,30 @@ setInterval(timer,1000);
 <div id="play" ><a href="javascript:start()">
 PLAY!</a>
 </div>
-<table >
-<tr id="r1">
-	<td id="d1"></td>
-	<td id="d2"></td>
-	<td id="d3"></td>
-	<td id="d4"></td>
+<table id="table">
+<tr >
+	<td onclick="uncover(1)"></td>
+	<td onclick="uncover(2)"></td>
+	<td onclick="uncover(3)"></td>
+	<td onclick="uncover(4)"></td>
 </tr>
-<tr id="r2">
-	<td id="d5"></td>
-	<td id="d6"></td>
-	<td id="d7"></td>
-	<td id="d8"></td>
+<tr >
+	<td onclick="uncover(5)"></td>
+	<td onclick="uncover(6)"></td>
+	<td onclick="uncover(7)"></td>
+	<td onclick="uncover(8)"></td>
 </tr>
-<tr id="r3">
-	<td id="d9"></td>
-	<td id="d10"></td>
-	<td id="d11"></td>
-	<td id="d12"></td>
+<tr >
+	<td onclick="uncover(9)"></td>
+	<td onclick="uncover(10)"></td>
+	<td onclick="uncover(11)"></td>
+	<td onclick="uncover(12)"></td>
 </tr>
-<tr id="r4">
-	<td id="d13"></td>
-	<td id="d14"></td>
-	<td id="d15"></td>
-	<td id="d16"></td>
+<tr >
+	<td onclick="uncover(13)"></td>
+	<td onclick="uncover(14)"></td>
+	<td onclick="uncover(15)"></td>
+	<td onclick="uncover(16)"></td>
 </tr>
 </table>
 <div id="time">time:000</div>
@@ -63,11 +66,62 @@ document.getElementById("time").innerHTML ='time:'+seconds;
 };
 var alpha = ['M','A','K','E','P','A','I','R'];
 var alpha2 = alpha.concat(alpha);
-var i;
-for(i=0;i<12;i++)
-{	if(i<4)
-	document.getElementsByTagName("table").rows[i].cells[i].innerHTML= alpha2[i];
+function begin(){
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }
+var alpha3 = shuffle(alpha2);
+var table = document.getElementById("table");
+for(var i=0,row;row=table.rows[i];i++)
+{
+	for(var j=0,cell;cell=row.cells[j];j++)
+	{	
+		if(i===0)
+		cell.innerHTML=alpha3[j];
+		else if(i===1)
+		cell.innerHTML=alpha3[j+4];
+		else if(i===2)
+		cell.innerHTML=alpha3[j+8];
+		else
+		cell.innerHTML=alpha3[j+12];
+	}
+}
+}
+function uncover(place){
+if(document.getElementById("active1")==null)
+{
+if(place<5)
+document.getElementById("table").rows[0].cells[place-1].id= "active1";
+else if(place>=5 && place<9)
+document.getElementById("table").rows[1].cells[place - 5].id= "active1";
+else if(place>=9 && place<13)
+document.getElementById("table").rows[2].cells[place - 9].id= "active1";
+else
+document.getElementById("table").rows[3].cells[place - 13].id= "active1";
+}
+else
+{
+if(place<5)
+document.getElementById("table").rows[0].cells[place-1].id= "active2";
+else if(place>=5 && place<9)
+document.getElementById("table").rows[1].cells[place - 5].id= "active2";
+else if(place>=9 && place<13)
+document.getElementById("table").rows[2].cells[place - 9].id= "active2";
+else
+document.getElementById("table").rows[3].cells[place - 13].id= "active2";
+}
+}	
+		
 </script>
 </body>
 </html>

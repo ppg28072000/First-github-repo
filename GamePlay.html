@@ -5,13 +5,12 @@
 <script>
 
 function start(){
+document.getElementById("master").style.display='none';
 document.getElementById("play").style.display='none';
-document.getElementById("play").id ="started"
+//document.getElementById("play").id ="started"
 setInterval(timer,1000);
 begin();
-};
-if(document.getElementById("play") !==null)
-document.getElementByTagName("td").style.pointerEvents = 'none';
+}
 </script>
 <link href="third.css" type="text/css" rel="stylesheet">
 
@@ -23,33 +22,33 @@ document.getElementByTagName("td").style.pointerEvents = 'none';
 <h3>As much as possible!</h3>
 <h4>Good luck!.</h4>
 </div>
-<div id="play" ><a href="javascript:start()">
-PLAY!</a>
-</div>
+<div id="master">
+</div><div id="play" ><a href="javascript:start()">
+PLAY!</a></div>
 <table id="table">
 <tr >
-	<td onclick="uncover(1)"></td>
-	<td onclick="uncover(2)"></td>
-	<td onclick="uncover(3)"></td>
-	<td onclick="uncover(4)"></td>
+	<td onclick="uncover(1)"> </td>
+	<td onclick="uncover(2)"> </td>
+	<td onclick="uncover(3)"> </td>
+	<td onclick="uncover(4)"> </td>
 </tr>
 <tr >
-	<td onclick="uncover(5)"></td>
-	<td onclick="uncover(6)"></td>
-	<td onclick="uncover(7)"></td>
-	<td onclick="uncover(8)"></td>
+	<td onclick="uncover(5)"> </td>
+	<td onclick="uncover(6)"> </td>
+	<td onclick="uncover(7)"> </td>
+	<td onclick="uncover(8)"> </td>
 </tr>
 <tr >
-	<td onclick="uncover(9)"></td>
-	<td onclick="uncover(10)"></td>
-	<td onclick="uncover(11)"></td>
-	<td onclick="uncover(12)"></td>
+	<td onclick="uncover(9)"> </td>
+	<td onclick="uncover(10)"> </td>
+	<td onclick="uncover(11)"> </td>
+	<td onclick="uncover(12)"> </td>
 </tr>
 <tr >
-	<td onclick="uncover(13)"></td>
-	<td onclick="uncover(14)"></td>
-	<td onclick="uncover(15)"></td>
-	<td onclick="uncover(16)"></td>
+	<td onclick="uncover(13)"> </td>
+	<td onclick="uncover(14)"> </td>
+	<td onclick="uncover(15)"> </td>
+	<td onclick="uncover(16)"> </td>
 </tr>
 </table>
 <div id="time">time:000</div>
@@ -63,7 +62,7 @@ else if(seconds<=99)
 document.getElementById("time").innerHTML ='time:0'+seconds;
 else
 document.getElementById("time").innerHTML ='time:'+seconds;
-};
+}
 var alpha = ['M','A','K','E','P','A','I','R'];
 var alpha2 = alpha.concat(alpha);
 function begin(){
@@ -72,7 +71,6 @@ function shuffle(array) {
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
-
     temporaryValue = array[currentIndex];
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
@@ -87,7 +85,7 @@ for(var i=0,row;row=table.rows[i];i++)
 	for(var j=0,cell;cell=row.cells[j];j++)
 	{	
 		if(i===0)
-		cell.innerHTML=alpha3[j];
+		{cell.innerHTML=alpha3[j];cell.textContent.style.display='none';}
 		else if(i===1)
 		cell.innerHTML=alpha3[j+4];
 		else if(i===2)
@@ -102,14 +100,20 @@ if(document.getElementById("active1")==null)
 {
 if(place<5)
 document.getElementById("table").rows[0].cells[place-1].id= "active1";
+//break;}
 else if(place>=5 && place<9)
 document.getElementById("table").rows[1].cells[place - 5].id= "active1";
+//break;}
 else if(place>=9 && place<13)
 document.getElementById("table").rows[2].cells[place - 9].id= "active1";
+//break;}
 else
 document.getElementById("table").rows[3].cells[place - 13].id= "active1";
+//break;}
+document.getElementById('active1').style.pointerEvents = 'none';
+return;
 }
-else
+else if(document.getElementById("active1")!= null && document.getElementById("active2")==null)
 {
 if(place<5)
 document.getElementById("table").rows[0].cells[place-1].id= "active2";
@@ -119,9 +123,26 @@ else if(place>=9 && place<13)
 document.getElementById("table").rows[2].cells[place - 9].id= "active2";
 else
 document.getElementById("table").rows[3].cells[place - 13].id= "active2";
+//}
+document.getElementById('active1').style.pointerEvents = 'auto';
+if(document.getElementById("active1").textContent == document.getElementById("active2").textContent)
+{
+	document.getElementById("active1").id="paired";
+	document.getElementById("active2").id="paired";
 }
-}	
-		
+else
+{	
+	window.setTimeout(reset,1000);
+	function reset(){
+	console.log("I am Waiting");
+	
+	document.getElementById("active1").id="none";
+	document.getElementById("active2").id="none";}
+	
+}
+}
+	}	
+	
 </script>
 </body>
 </html>

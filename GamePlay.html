@@ -27,28 +27,28 @@ begin();
 PLAY!</a></div>
 <table id="table">
 <tr >
-	<td onclick="uncover(1)"> </td>
-	<td onclick="uncover(2)"> </td>
-	<td onclick="uncover(3)"> </td>
-	<td onclick="uncover(4)"> </td>
+	<td id="none"onclick="uncover(1)"> </td>
+	<td id="none"onclick="uncover(2)"> </td>
+	<td id="none"onclick="uncover(3)"> </td>
+	<td id="none"onclick="uncover(4)"> </td>
 </tr>
 <tr >
-	<td onclick="uncover(5)"> </td>
-	<td onclick="uncover(6)"> </td>
-	<td onclick="uncover(7)"> </td>
-	<td onclick="uncover(8)"> </td>
+	<td id="none"onclick="uncover(5)"> </td>
+	<td id="none"onclick="uncover(6)"> </td>
+	<td id="none"onclick="uncover(7)"> </td>
+	<td id="none"onclick="uncover(8)"> </td>
 </tr>
 <tr >
-	<td onclick="uncover(9)"> </td>
-	<td onclick="uncover(10)"> </td>
-	<td onclick="uncover(11)"> </td>
-	<td onclick="uncover(12)"> </td>
+	<td id="none"onclick="uncover(9)"> </td>
+	<td id="none"onclick="uncover(10)"> </td>
+	<td id="none"onclick="uncover(11)"> </td>
+	<td id="none"onclick="uncover(12)"> </td>
 </tr>
 <tr >
-	<td onclick="uncover(13)"> </td>
-	<td onclick="uncover(14)"> </td>
-	<td onclick="uncover(15)"> </td>
-	<td onclick="uncover(16)"> </td>
+	<td id="none"onclick="uncover(13)"> </td>
+	<td id="none"onclick="uncover(14)"> </td>
+	<td id="none"onclick="uncover(15)"> </td>
+	<td id="none"onclick="uncover(16)"> </td>
 </tr>
 </table>
 <div id="time">time:000</div>
@@ -96,6 +96,16 @@ for(var i=0,row;row=table.rows[i];i++)
 }
 }
 function uncover(place){
+{
+	if(place<5)
+	{if(document.getElementById("table").rows[0].cells[place-1].id=="paired")return;}
+	else if(place>=5 && place<9)
+	{if(document.getElementById("table").rows[1].cells[place-5].id=="paired")return;}
+	else if(place>=9 && place<13)
+	{if(document.getElementById("table").rows[2].cells[place-9].id=="paired")return;}
+	else
+	{if(document.getElementById("table").rows[3].cells[place-13].id=="paired")return;}
+}
 if(document.getElementById("active1")==null)
 {
 if(place<5)

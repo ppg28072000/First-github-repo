@@ -55,11 +55,12 @@ font-size:20px;
 
 td 	{
 	background-image:url(scrap.jpg);
-	width:100px;
+	width:25%;
 	height:100px;
 	background-repeat:no-repeat;
 	border: 1px solid black;
-	font-size:40px;
+	font-size:30px;
+	padding:0px;
 	text-align:center;
 }
 body {
@@ -94,7 +95,8 @@ background-color:Lime;
 	color:blue;
 }
 #paired{
-	color:pink;
+	color:grey;
+	opacity:0.7;
 }
 td img{
 	position:absolute;
@@ -103,4 +105,7 @@ td img{
 	z-index:2;
 	height:100px;
 	width:80px;
+}
+#none {
+	font-size:0px;
 }

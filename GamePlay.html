@@ -3,12 +3,13 @@
 <head>
 <title>Make a match</title>
 <script>
-
+var time;
+var anger;
 function start(){
 document.getElementById("master").style.display='none';
 document.getElementById("play").style.display='none';
 //document.getElementById("play").id ="started"
-setInterval(timer,1000);
+time =setInterval(timer,1000);
 begin();
 }
 </script>
@@ -16,8 +17,10 @@ begin();
 
 </head>
 <body>
-
+<img src="blue.jpg" id="img"/>
+<img src="blue2.jpg" id="img2"/>
 <div id="head">
+<img src="fireeyes.jpg" id="eyes">
 <h1>Make the match</h1>
 <h3>As much as possible!</h3>
 <h4>Good luck!.</h4>
@@ -56,14 +59,24 @@ PLAY!</a></div>
 var seconds=0;
 function timer(){
 seconds++;
+if(seconds==5)
+eyes();
+if(seconds==10)
+{document.getElementById("head").style.background="rgb(3, 25, 61)";}
 if(seconds<=9)
 document.getElementById("time").innerHTML ='time:00'+seconds;
 else if(seconds<=99)
 document.getElementById("time").innerHTML ='time:0'+seconds;
-else
-document.getElementById("time").innerHTML ='time:'+seconds;
+else 
+{//document.getElementById("time").innerHTML ='time:'+seconds;
+clearInterval(time);
+lost();
 }
-var alpha = ['M','A','K','E','P','A','I','R'];
+if(document.getElementById("none")==null)
+finish();
+
+}
+var alpha = ['I','D','R','A','G','O','N','S'];
 var alpha2 = alpha.concat(alpha);
 function begin(){
 function shuffle(array) {
@@ -139,6 +152,7 @@ if(document.getElementById("active1").textContent == document.getElementById("ac
 {
 	document.getElementById("active1").id="paired";
 	document.getElementById("active2").id="paired";
+	forward();
 }
 else
 {	
@@ -152,7 +166,89 @@ else
 }
 }
 	}	
+var move=0;
+var limit=0;
+function forward(){
+move+=1366/8;
+animate();
+}
+function animate(){
+var id=setInterval(go,10);
+if(move<limit-1)
+clearInterval(id);
+	function go(){
+	if(move>limit)
+	{document.getElementById("img").style.width=limit+'px';
+	document.getElementById("img2").style.width=limit+'px';
+	limit++;
+	document.getElementById("img").style.opacity=limit/1000;
+	document.getElementById("img2").style.opacity=limit/1000;}
+				}
+	}
+var red;
+var down;
+function eyes(){
+var red=0;
+var down=1000;
+anger=setInterval(glow,1);
+function glow(){
+if(red<1000)
+{red++;document.getElementById("eyes").style.opacity=red/1000;down=1000;}
+else if(red>1000)
+red=1000;
+else if(red==1000)
+{down--;document.getElementById("eyes").style.opacity=down/1000;}
+else if(down<0)
+down==0;
+if(red==1000&& down==0)
+{
+red=0;down=1000;}
+}
+}
+function stopeyes(red){
+clearInterval(anger);
+setInterval(stop,1);
+function stop(){
+if(red<1000)
+{red++;document.getElementById("eyes").style.opacity=red/1000;}
+else if(red>1000)
+red=1000;
+}
+}
+function finish()
+{
+	clearInterval(time);
 	
+	document.getElementById("table").style.background="black";
+	document.getElementById("table").style.backgroundImage=" url('ID.png')";
+	document.getElementById("table").style.backgroundPosition="Center";
+	document.getElementById("table").style.backgroundSize=400+"px";
+	document.getElementById("table").style.backgroundRepeat=" no-repeat";
+	document.getElementById("table").style.borderRadius= 30+"px";
+	//document.getElementById("table").style.backgroundImage.height=400+"px";
+	var table = document.getElementById("table");
+	for(var i=0,row;row=table.rows[i];i++)
+	row.style.opacity="0";
+	//document.getElementById("master").style.display='block';
+	//document.getElementById("master").style.opacity='1';
+	document.getElementById("play").style.display='block';
+	document.getElementById("play").id='end';
+	document.getElementById("end").innerHTML="Congratulations" +'<br>'+"You Won this Dumb game";
+	document.getElementById("time").style.background='rgb(43, 51, 66)';
+	stopeyes(red);
+	document.getElementById("eyes").style.opacity='1';
+	
+function lost(){
+	//document.getElementById("master").style.backgroundImage="url('DragonEye.jpg')";
+	//document.getElementById("master").style.opacity='1';
+	document.getElementById("play").id='end';
+	document.getElementById("end").innerHTML="YOU ARE LATE";
+	document.getElementById("end").style.display="block";
+	document.getElementById("master").style.display='block';
+	document.getElementById("time").style.background='grey';
+	clearInterval(anger);
+	document.getElementById("eyes").style.opacity='1';
+	}
 </script>
 </body>
 </html>

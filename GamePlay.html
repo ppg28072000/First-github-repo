@@ -14,20 +14,16 @@ begin();
 }
 </script>
 <link href="third.css" type="text/css" rel="stylesheet">
-
 </head>
 <body>
-<img src="blue.jpg" id="img"/>
-<img src="blue2.jpg" id="img2"/>
+<div id="masterimg"><img src="blue.jpg" id="img"/>
+<img src="blue2.jpg" id="img2"/></div>
 <div id="head">
 <img src="fireeyes.jpg" id="eyes">
 <h1>Make the match</h1>
 <h3>As much as possible!</h3>
 <h4>Good luck!.</h4>
 </div>
-<div id="master">
-</div><div id="play" ><a href="javascript:start()">
-PLAY!</a></div>
 <table id="table">
 <tr >
 	<td id="none"onclick="uncover(1)"> </td>
@@ -54,6 +50,9 @@ PLAY!</a></div>
 	<td id="none"onclick="uncover(16)"> </td>
 </tr>
 </table>
+<div id="master">
+</div><div id="play" ><a href="javascript:start()">
+PLAY!</a></div>
 <div id="time">time:000</div>
 <script>
 var seconds=0;
@@ -151,13 +150,15 @@ document.getElementById("table").rows[3].cells[place - 13].id= "active2";
 document.getElementById('active1').style.pointerEvents = 'auto';
 if(document.getElementById("active1").textContent == document.getElementById("active2").textContent)
 {
+	setTimeout(paired,2000);
+	function paired(){
 	document.getElementById("active1").id="paired";
-	document.getElementById("active2").id="paired";
+	document.getElementById("active2").id="paired";}
 	forward();
 }
 else
 {	
-	window.setTimeout(reset,1000);
+	window.setTimeout(reset,1500);
 	function reset(){
 	console.log("I am Waiting");
 	
@@ -216,6 +217,7 @@ else if(red>1000)
 red=1000;
 }
 }
+var score=100-seconds;
 function finish()
 {
 	clearInterval(time);
@@ -234,7 +236,7 @@ function finish()
 	//document.getElementById("master").style.opacity='1';
 	document.getElementById("play").style.display='block';
 	document.getElementById("play").id='end';
-	document.getElementById("end").innerHTML="Congratulations" +'<br>'+"You Won this Dumb game";
+	document.getElementById("end").innerHTML="Congratulations" +'<br>'+"You Won this Dumb game" +'<br>' +"your score:" + score ;
 	document.getElementById("time").style.background='rgb(43, 51, 66)';
 	stopeyes(red);
 	document.getElementById("eyes").style.opacity='1';
@@ -242,9 +244,9 @@ function finish()
 function lost(){
 	//document.getElementById("master").style.backgroundImage="url('DragonEye.jpg')";
 	//document.getElementById("master").style.opacity='1';
-	document.getElementById("play").id='end';
-	document.getElementById("end").innerHTML="YOU ARE LATE";
-	document.getElementById("end").style.display="block";
+	document.getElementById("play").id='end1';
+	document.getElementById("end1").innerHTML="YOU ARE LATE";
+	document.getElementById("end1").style.display="block";
 	document.getElementById("master").style.display='block';
 	document.getElementById("time").style.background='grey';
 	clearInterval(anger);

@@ -206,7 +206,7 @@ td img{
 	width:80px;
 }
 #none {
-	font-size:40px;
+	font-size:0px;
 }
 #none:hover{
 	animation-name:blink;

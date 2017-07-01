@@ -1,0 +1,143 @@
+#header{
+	position:relative;
+	width:600px;
+	height:400px;
+	left:400px;
+	border-style:groove;
+	border-color:yellow;
+	border-width:10px;
+	background-color:Azure;
+	text-align:Center;
+}
+#header h1{
+	position:absolute;
+	left:0px;
+	top:-22px;
+	color:SteelBlue;
+	background-color:Orange;
+	width:100%;
+	z-index:1;
+}
+#tabs {
+	position:absolute;
+	right:0px;
+	width:40%;
+}
+#header #reg {
+	position:absolute;
+	right:60px;
+	z-index:2;
+	height:40px;
+	background-color:PaleGoldenRod;
+	width:40%;
+}
+#header #log {
+	position:absolute;
+	right:0px;
+	height:40px;
+	z-index:2;
+	width:30%;
+	background-color:Moccasin;
+}
+#regfields,#logfields {
+	position:absolute;
+	left:40px;
+	top:90px;
+	border-width:1px;
+	border-style:solid;
+	width:500px;
+	height:300px;
+	background-color:PowderBlue;
+	
+}
+#first input[type=text]{
+	width:120px;
+	height:20px;
+	border-radius:5px;
+	font-size:15px;
+}
+
+ input[type=text]{
+	width:200px;
+	height:20px;
+	border-radius:5px;
+	font-size:15px;
+}
+ input[type=password]{
+	width:200px;
+	height:20px;
+	border-radius:5px;
+	font-size:15px;
+	
+}
+ #first{
+	position:absolute;
+	left:30px;
+	font-size:20px;
+}
+ #second{
+	position:absolute;
+	left:70px;
+	margin:15px;
+	font-size:20px;
+}
+ #third{
+	position:absolute;
+	left:75px;
+	top:110px;
+	margin:15px;
+	font-size:20px;
+}
+ #fourth{
+	position:absolute;
+	left:0px;
+	top:140px;
+	margin:15px;
+	font-size:20px;
+}
+#submitreg input[type=submit]{
+	font-size:30px;
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	background-color:PaleGoldenRod;
+}
+hr {
+	position:absolute;
+	top:70px;
+	width:100%;
+}
+#threeandhalf{
+	position:absolute;
+	top:80px;
+	left:110px;
+	font-size:20px;
+}
+#submitlog input[type=submit]{
+	font-size:30px;
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	background-color:Moccasin;
+}
+#ERRname{
+	font-size:10px;
+	color:blue;
+	position:absolute;
+	left:10px;
+	top:20px;
+}
+#ERRusername{
+	font-size:10px;
+	color:blue;
+	position:absolute;
+	left:10px;
+	top:50px;
+}
+#ERRpassword{
+	font-size:10px;
+	color:blue;
+	position:absolute;
+	left:5px;
+	top:180px;
+}

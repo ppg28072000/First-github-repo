@@ -1,0 +1,185 @@
+body{
+	background-image:url(tile.jpg);
+	background-size:200px 300px;
+	width:100%;
+	min-width:1366px;
+	height:600px;
+}
+#master{
+	width:100%;
+	min-width:1366px;
+	height:700px;
+	background-color:none;
+	position:relative;
+	left:-10px;
+	top:-10px;
+}
+#data{
+	position:absolute;
+	left:60px;
+	top:20px;
+	background-color:Cornsilk;
+	width:90%;
+	border-radius:10px;
+	text-align:center;
+	
+}
+#header{
+	width:auto;
+	font-size:20px;
+	background-color:LightBlue;
+	color:;
+	position:absolute;
+	top:20px;
+	left:40%;
+	border-radius:10px;
+	z-index:2;
+}
+hr {
+	width:1366px;
+	position:absolute;
+	top:80px;
+	color:SteelBlue;
+	height:1px;
+}
+
+#list {
+	width:200px;
+	overflow:auto;
+	background-color:DarkViolet;
+	height:80%;
+	position:absolute;
+	top:150px;
+	left:5px;
+	border-radius:6px;
+}
+#list 
+{
+	opacity:0.9;
+	z-index:0;
+}
+#list table{
+	opacity:0.9;
+}
+tr{
+	text-align:center;
+	background-color:grey;
+	opacity:0.9;
+}
+tr:nth-child(even){
+	text-align:center;
+	background-color:White;
+}
+th{
+	background-color:Khaki;
+}
+h3 {
+	position:absolute;
+	top:110px;
+	left:40px;
+	background-color:Pink;
+	width:110px;
+}
+#msg{
+	position:absolute;
+	left:300px;
+	top:150px;
+	width:300px;
+	background-color:SlateBlue;
+	height:200px;
+	border-radius:10px 50px  50px 50px;
+}
+#msg h4{
+	color:white;
+	font-family:Garmond;
+	position:absolute;
+	top:-20px;
+	left:80px;
+}
+#msg #one{
+	position:absolute;
+	top:35px;
+	margin-left:20px;
+	margin-top:20px;
+	color:White;
+}
+#msg #one #err {
+	position:absolute;
+	bottom:-40px;
+	left:20px;
+	color:pink;
+}
+#msg #one button{
+	position:absolute;
+	right:-50px;
+	top:40px;
+	width:40px;
+	height:40px;
+	bottom:-50px;
+	background:Aqua;
+	border-style:ridge;
+	font-size:30px;
+	border-radius:20px;
+	border-color:Aqua;
+}
+#msg #one button:hover{
+	border-style:none;
+	box-shadow:1px 1px 1px #000;
+}
+
+#bar{
+	/* background-color:SkyBlue; */
+	width:100%;
+	min-width:1366px;
+	position:absolute;
+	top:80px;
+	height:30px;
+	animation-name:jingle;
+	animation-duration:4s;
+	animation-iteration-count:infinite;
+}
+@keyframes jingle{
+	0% {background: linear-gradient(to right, White 20%,DeepSkyBlue 100%);}	
+	50% {background: linear-gradient(to right, White 50%,SkyBlue 100%);}	
+	100% {background: linear-gradient(to right, White 20%,DeepSkyBlue 100%);}	
+	
+}
+#bar button{
+	width:200px;
+	height:30px;
+	background-color:SkyBlue;
+	color:White;
+	border-style:none;
+	font-size:15px;
+	font-weight:bold;
+	 margin-right:30px; 
+}
+#bar button:hover{
+	background-color:DeepSkyBlue;
+	font-weight:bolder;
+}
+
+#chatbox {
+	background-image:url(fog.jpg);
+	background-size:300px 400px;
+	background-color:rgba(0.4);
+	width:300px;
+	height:400px;
+	position:absolute;
+	right:300px;
+	top:150px;
+	border-width:10px;
+	border-style:solid;
+	border-color:MediumBlue;
+	border-radius:20px;
+}
+#chat {
+	position:absolute;
+	top:20px;
+	left:0px;
+	overflow:auto;
+	width:300px;
+	height:350px;
+	background-color:rgba(0,54,0,1);
+	color:White;
+}
